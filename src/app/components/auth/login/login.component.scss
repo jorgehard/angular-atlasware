@@ -1,0 +1,18 @@
+@import '~@angular/cdk/text-field/text-field';
+
+mat-grid-list {
+  background: #2940a6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  form {
+    padding: 0px 5rem;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  mat-grid-tile {
+    color: #f3f3f3;
+    border: 1px solid red;
+  }
+}

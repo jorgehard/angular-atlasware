@@ -1,10 +1,26 @@
-<mat-grid-list cols="12" rowHeight="100px">
-  <mat-grid-tile
-    *ngFor="let tile of tiles"
-    [colspan]="tile.cols"
-    [rowspan]="tile.rows"
-    [style.background]="tile.color"
-  >
-    {{ tile.text }}
+<mat-grid-list cols="12" rowHeight="100%">
+  <mat-grid-tile colspan="7" rowspan="1"> text </mat-grid-tile>
+  <mat-grid-tile colspan="5" rowspan="1">
+    <form (ngSubmit)="onSubmit()" #form="ngForm" autocomplete="off">
+      <mat-form-field appearance="standard">
+        <mat-label>Enter your password</mat-label>
+        <input matInput name="teste" [type]="hide ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" />
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+    </form>
   </mat-grid-tile>
 </mat-grid-list>
